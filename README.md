@@ -8,7 +8,7 @@ To install, place wttr.el somewhere into your emacs `load-path`, and require `wt
 
 ## Usage
 
-To get the weather in a city, do `M-x wttr RET`.
+To get the weather in a city, do `M-x wttr RET`. To get the moon phase, do `M-x wttr-moon RET`.
 
 ## Configuration
 
