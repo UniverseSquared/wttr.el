@@ -19,7 +19,7 @@
 
 (defun wttr-show (path)
   (let ((response (wttr-request path))
-	(inhibit-read-only t))
+        (inhibit-read-only t))
     (switch-to-buffer "*wttr*")
     (setq buffer-read-only t)
     (erase-buffer)
