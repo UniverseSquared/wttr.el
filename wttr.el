@@ -1,11 +1,14 @@
 (require 'xterm-color)
 
+(defgroup wttr nil
+  "Emacs client for wttr.in.")
+
 (defcustom wttr-city-names '("London" "Milton Keynes" "Paris")
-  "A list of city names that can be chosen from with `wttr'.")
+  "A list of city names that can be chosen from with `wttr'."
+  :group 'wttr)
 
 (defun wttr-request (path)
-  (let ((request-url (concat "http://wttr.in/" path))
-	(url-request-extra-headers '(("User-Agent" . "curl"))))
+  (let ((request-url (format "http://wttr.in/%s?A" path)))
     (with-current-buffer (url-retrieve-synchronously request-url)
       (goto-char (1+ url-http-end-of-headers))
       (decode-coding-string (buffer-substring (point) (point-max)) 'utf-8))))
