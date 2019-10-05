@@ -3,8 +3,8 @@
 (defgroup wttr nil
   "Emacs client for wttr.in.")
 
-(defcustom wttr-city-names '("London" "Milton Keynes" "Paris")
-  "A list of city names that can be chosen from with `wttr'."
+(defcustom wttr-location-names '("London" "Milton Keynes" "Paris")
+  "A list of location names that can be chosen from with `wttr'."
   :group 'wttr)
 
 (defcustom wttr-language "en"
@@ -31,6 +31,6 @@
 
 (defun wttr ()
   (interactive)
-  (wttr-show (completing-read "City name: " wttr-city-names)))
+  (wttr-show (completing-read "Location name: " wttr-location-names)))
 
 (provide 'wttr)

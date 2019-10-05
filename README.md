@@ -14,4 +14,4 @@ To get the weather in a city, do `M-x wttr RET`. To get the moon phase, do `M-x 
 
 The following configuration variables are available:
 
-* `wttr-city-names`: a list of city names (default value `'("London" "Milton Keynes" "Paris")`)
+* `wttr-location-names`: a list of location names (default value `'("London" "Milton Keynes" "Paris")`)
