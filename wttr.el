@@ -7,8 +7,12 @@
   "A list of city names that can be chosen from with `wttr'."
   :group 'wttr)
 
+(defcustom wttr-language "en"
+  "The language code to be used in responses."
+  :group 'wttr)
+
 (defun wttr-request (path)
-  (let ((request-url (format "http://wttr.in/%s?A" path)))
+  (let ((request-url (format "http://wttr.in/%s?A&lang=%s" path wttr-language)))
     (with-current-buffer (url-retrieve-synchronously request-url)
       (goto-char (1+ url-http-end-of-headers))
       (decode-coding-string (buffer-substring (point) (point-max)) 'utf-8))))
