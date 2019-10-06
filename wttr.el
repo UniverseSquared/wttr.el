@@ -31,6 +31,9 @@
 
 (defun wttr ()
   (interactive)
-  (wttr-show (completing-read "Location name: " wttr-location-names)))
+  (let ((location-name (if (= 1 (length wttr-location-names))
+                           (car wttr-location-names)
+                         (completing-read "Location name: " wttr-location-names))))
+    (wttr-show location-name)))
 
 (provide 'wttr)
